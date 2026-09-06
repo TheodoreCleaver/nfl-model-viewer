@@ -1,0 +1,2860 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stanton NFL — Week 1</title>
+<style>
+:root {
+    --bg:#071321;
+    --panel:#0d1e31;
+    --panel2:#10253d;
+    --line:#203954;
+    --text:#f6f8fb;
+    --muted:#9db1ca;
+    --gold:#f0bd59;
+    --blue:#4c83ff;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+    margin:0;
+    color:var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(46,88,143,.26), transparent 35%),
+        var(--bg);
+    font-family:Inter,Arial,sans-serif;
+}
+img { display:block; }
+a { color:inherit; text-decoration:none; }
+.container {
+    width:min(1200px,calc(100% - 30px));
+    margin:auto;
+}
+.hero { padding:28px 0 12px; }
+.hero-row {
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    align-items:center;
+}
+.brand-lockup {
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+.brand-logo {
+    width:74px;
+    height:74px;
+    object-fit:contain;
+}
+.brand-kicker {
+    color:var(--gold);
+    font-weight:900;
+    font-size:12px;
+    letter-spacing:.16em;
+    margin-bottom:8px;
+}
+h1 {
+    margin:0;
+    font-size:clamp(38px,5vw,62px);
+    letter-spacing:-.045em;
+    line-height:1;
+}
+.hero p {
+    color:var(--muted);
+    margin:12px 0 0;
+    max-width:780px;
+    line-height:1.5;
+}
+.week-box {
+    min-width:165px;
+    text-align:right;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.035);
+    border-radius:18px;
+    padding:16px 18px;
+}
+.week-box span {
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.10em;
+}
+.week-box strong {
+    display:block;
+    font-size:30px;
+    margin-top:5px;
+}
+nav {
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+nav a {
+    padding:9px 13px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.035);
+    font-size:14px;
+    font-weight:750;
+}
+
+.masthead-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:24px;
+}
+
+.brand-mark {
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.brand-logo {
+    width:66px;
+    height:66px;
+    object-fit:contain;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.18));
+}
+
+.brand-name {
+    color:var(--text);
+    font-size:18px;
+    line-height:1;
+    font-weight:950;
+    letter-spacing:.14em;
+}
+
+.brand-sub {
+    margin-top:6px;
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.issue-meta {
+    text-align:right;
+}
+
+.issue-label {
+    color:var(--muted);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.16em;
+}
+
+.issue-week {
+    margin-top:4px;
+    color:var(--gold);
+    font-size:17px;
+    font-weight:950;
+    letter-spacing:.10em;
+}
+
+.masthead-rule {
+    height:2px;
+    margin:18px 0 24px;
+    border-radius:999px;
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold) 0%,
+            rgba(240,189,89,.45) 24%,
+            rgba(255,255,255,.07) 72%,
+            transparent 100%
+        );
+}
+
+.hero-main {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:28px;
+}
+
+.hero-copy {
+    min-width:0;
+}
+
+.hero-deck {
+    margin:0;
+    color:var(--text);
+    font-size:clamp(19px,2vw,26px);
+    line-height:1.35;
+    font-weight:750;
+    letter-spacing:-.015em;
+    max-width:720px;
+}
+
+.hero-stats {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(120px,1fr));
+    gap:10px;
+    flex:0 0 auto;
+}
+
+.hero-stat {
+    min-width:132px;
+    padding:14px 16px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.018)
+        );
+    text-align:right;
+}
+
+.hero-stat span {
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.hero-stat strong {
+    display:block;
+    margin-top:4px;
+    color:var(--text);
+    font-size:26px;
+    font-weight:950;
+}
+
+nav {
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap;
+    margin-top:22px;
+}
+
+nav a {
+    padding:9px 13px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.035);
+    font-size:14px;
+    font-weight:750;
+    transition:
+        transform .15s ease,
+        border-color .15s ease,
+        background .15s ease;
+}
+
+nav a:hover {
+    transform:translateY(-1px);
+    border-color:rgba(240,189,89,.42);
+    background:rgba(240,189,89,.07);
+}
+
+section {
+    padding:34px 0;
+    border-top:1px solid rgba(255,255,255,.035);
+}
+.section-head { margin-bottom:16px; }
+.section-head h2 {
+    margin:0;
+    font-size:clamp(27px,4vw,40px);
+    letter-spacing:-.03em;
+}
+.section-head p {
+    color:var(--muted);
+    margin:6px 0 0;
+    max-width:760px;
+    line-height:1.5;
+}
+.feature-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+.featured-card {
+    position:relative;
+    overflow:hidden;
+    border:0;
+    border-radius:22px;
+    padding:20px;
+    background:
+        linear-gradient(160deg, color-mix(in srgb, var(--team-a) 72%, #0b1828 28%),
+                               color-mix(in srgb, var(--team-b) 58%, #081321 42%));
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.07),
+        0 12px 28px rgba(0,0,0,.18);
+}
+.type-badge {
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:999px;
+    background:rgba(7,19,33,.52);
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.11em;
+}
+.matchup-logos {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:15px;
+}
+.matchup-logos div {
+    display:flex;
+    align-items:center;
+    gap:7px;
+    background:rgba(7,19,33,.38);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:999px;
+    padding:6px 9px;
+}
+.matchup-logos img {
+    width:25px;
+    height:25px;
+    object-fit:contain;
+}
+.featured-card h3 {
+    font-size:25px;
+    margin:17px 0 4px;
+}
+.featured-pick {
+    font-size:34px;
+    font-weight:950;
+    margin-bottom:18px;
+}
+.stat-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+}
+.stat-grid div {
+    background:rgba(7,19,33,.42);
+    border-radius:13px;
+    padding:11px;
+}
+.stat-grid span {
+    display:block;
+    color:rgba(255,255,255,.74);
+    font-size:11px;
+}
+.stat-grid strong {
+    display:block;
+    margin-top:5px;
+    font-size:16px;
+}
+.pick-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+.pick-card {
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.032);
+    border-radius:16px;
+    padding:15px;
+}
+.pick-top {
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+    align-items:center;
+    color:var(--muted);
+    font-size:13px;
+    font-weight:700;
+}
+.pick-top img {
+    width:34px;
+    height:34px;
+    object-fit:contain;
+}
+.pick-team {
+    font-size:27px;
+    font-weight:950;
+    margin-top:10px;
+}
+.pick-percent {
+    color:var(--muted);
+    font-size:13px;
+    margin-top:2px;
+}
+.prob-track {
+    height:8px;
+    border-radius:999px;
+    overflow:hidden;
+    background:rgba(255,255,255,.08);
+    margin-top:11px;
+}
+.prob-fill {
+    height:100%;
+    background:linear-gradient(90deg,var(--blue),var(--gold));
+}
+.table-wrap {
+    overflow-x:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(8,18,31,.9);
+}
+th,td {
+    padding:13px 14px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    white-space:nowrap;
+}
+th {
+    color:var(--muted);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+.matchup-cell,.team-cell {
+    display:flex;
+    gap:7px;
+    align-items:center;
+}
+.matchup-cell img,.team-cell img {
+    width:22px;
+    height:22px;
+    object-fit:contain;
+}
+.at { color:var(--muted); }
+td .sub {
+    display:block;
+    color:var(--muted);
+    font-size:11px;
+    margin-top:2px;
+}
+.edge-number {
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.edge-number span {
+    min-width:34px;
+}
+.edge-meter {
+    width:52px;
+    height:5px;
+    background:rgba(255,255,255,.07);
+    border-radius:999px;
+    overflow:hidden;
+}
+.edge-meter div {
+    height:100%;
+    border-radius:999px;
+    background:#7f93aa;
+}
+.edge-strong span {
+    color:var(--gold);
+    font-weight:900;
+}
+.edge-strong .edge-meter div {
+    background:linear-gradient(90deg,#f0bd59,#ffdf93);
+}
+.inline-details summary {
+    cursor:pointer;
+    color:#c7d4e6;
+    font-weight:700;
+}
+.inline-details div {
+    margin-top:8px;
+    color:var(--muted);
+    line-height:1.55;
+    white-space:normal;
+    min-width:280px;
+}
+.rank {
+    width:55px;
+    color:var(--gold);
+    font-weight:900;
+}
+.power-board {
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:14px;
+}
+
+.power-column {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.power-card {
+    position:relative;
+    display:grid;
+    grid-template-columns:46px minmax(0,1fr) 50px;
+    align-items:center;
+    gap:12px;
+    min-height:72px;
+    padding:11px 14px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:15px;
+    background:
+        radial-gradient(
+            circle at 58% 22%,
+            color-mix(in srgb, var(--rank-accent) 12%, transparent) 0%,
+            transparent 43%
+        ),
+        radial-gradient(
+            circle at 88% 85%,
+            color-mix(in srgb, var(--rank-accent-2) 10%, transparent) 0%,
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.018)
+        );
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.10);
+    transition:
+        transform .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+.power-card:hover {
+    transform:translateY(-1px);
+    border-color:rgba(255,255,255,.14);
+    box-shadow:0 12px 24px rgba(0,0,0,.16);
+}
+
+.power-rank {
+    color:var(--gold);
+    font-size:23px;
+    font-weight:950;
+    text-align:center;
+}
+
+.power-team-wrap {
+    display:flex;
+    align-items:center;
+    gap:13px;
+    min-width:0;
+}
+
+.power-logo-shell {
+    width:52px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    border-radius:12px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.04);
+    flex:0 0 auto;
+}
+
+.power-logo {
+    width:45px;
+    height:45px;
+    object-fit:contain;
+    transform:scale(1.20);
+    transform-origin:center center;
+    filter:drop-shadow(0 2px 5px rgba(0,0,0,.30));
+}
+
+.power-team {
+    font-size:18px;
+    font-weight:950;
+    letter-spacing:.015em;
+}
+
+.power-movement {
+    text-align:right;
+}
+
+.power-movement strong {
+    display:block;
+    color:var(--muted);
+    font-size:19px;
+    line-height:1;
+    font-weight:900;
+}
+
+.power-movement.up strong {
+    color:#89d2a3;
+}
+
+.power-movement.down strong {
+    color:#ff8c8c;
+}
+
+.metric-grid {
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
+}
+.metric-card {
+    border:1px solid var(--line);
+    border-radius:15px;
+    background:rgba(255,255,255,.03);
+    padding:15px;
+}
+.metric-card span {
+    color:var(--muted);
+    font-size:12px;
+}
+.metric-card strong {
+    display:block;
+    font-size:23px;
+    margin-top:5px;
+}
+footer {
+    margin-top:20px;
+    padding:34px 0 50px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.55;
+}
+.footer-brand {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-bottom:8px;
+}
+.footer-brand strong {
+    color:var(--text);
+    letter-spacing:.12em;
+}
+.footer-brand span {
+    color:var(--gold);
+}
+@media(max-width:1000px) {
+    .pick-grid { grid-template-columns:repeat(2,1fr); }
+    .metric-grid { grid-template-columns:repeat(3,1fr); }
+    .power-board { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:800px) {
+    .masthead-top {
+        align-items:flex-start;
+    }
+    .hero-main {
+        display:block;
+    }
+    .hero-stats {
+        margin-top:18px;
+        max-width:320px;
+    }
+    .feature-grid { grid-template-columns:1fr; }
+}
+@media(max-width:620px) {
+    .container { width:min(100% - 18px,1200px); }
+    .masthead-top {
+        display:block;
+    }
+    .issue-meta {
+        margin-top:14px;
+        text-align:left;
+    }
+    .brand-logo {
+        width:54px;
+        height:54px;
+    }
+    .hero-stats {
+        grid-template-columns:1fr 1fr;
+        max-width:none;
+    }
+    .hero-stat {
+        min-width:0;
+        text-align:left;
+    }
+    .pick-grid { grid-template-columns:1fr; }
+    .stat-grid { grid-template-columns:1fr; }
+    .metric-grid { grid-template-columns:1fr 1fr; }
+    .power-board { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+
+    <header class="hero">
+        <div class="masthead-top">
+            <div class="brand-mark">
+                <img src="assets/branding/stanton_cfb_crest_white_512.png" alt="Stanton crest" class="brand-logo">
+                <div>
+                    <div class="brand-name">STANTON NFL</div>
+                    <div class="brand-sub">2026 Weekly Report</div>
+                </div>
+            </div>
+
+            <div class="issue-meta">
+                <div class="issue-label">CURRENT ISSUE</div>
+                <div class="issue-week">WEEK 1</div>
+            </div>
+        </div>
+
+        <div class="masthead-rule"></div>
+
+        <div class="hero-main">
+            <div class="hero-copy">
+                <p class="hero-deck">
+                    Picks, probabilities, market edges & power rankings.
+                </p>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span>Games</span>
+                    <strong>16</strong>
+                </div>
+                <div class="hero-stat">
+                    <span>Featured Picks</span>
+                    <strong>4</strong>
+                </div>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#card">The Stanton Card</a>
+            <a href="#pickem">Pick’em</a>
+            <a href="#weekly-board">Weekly Board</a>
+            <a href="#ratings">Power Rankings</a>
+            <a href="#performance">Track Record</a>
+        </nav>
+    </header>
+    
+
+<section id="card">
+    <div class="section-head">
+        <h2>The Stanton Card</h2>
+        <p>The model’s strongest Week 1 positions.</p>
+    </div>
+    <div class="feature-grid">
+        
+            <article class="featured-card"
+                style="--team-a:#D3BC8D;--team-b:#0076B6;">
+                <div class="type-badge">TOTAL</div>
+
+                <div class="matchup-logos">
+                    <div>
+                        <img src="assets/nfl_logos/NO.png" alt="NO logo">
+                        <strong>NO</strong>
+                    </div>
+                    <span>@</span>
+                    <div>
+                        <img src="assets/nfl_logos/DET.png" alt="DET logo">
+                        <strong>DET</strong>
+                    </div>
+                </div>
+
+                <h3>NO @ DET</h3>
+                <div class="featured-pick">UNDER 49.5</div>
+
+                
+                <div class="stat-grid">
+                    <div>
+                        <span>Stanton Total</span>
+                        <strong>45.5</strong>
+                    </div>
+                    <div>
+                        <span>Market Total</span>
+                        <strong>49.5</strong>
+                    </div>
+                    <div>
+                        <span>Difference</span>
+                        <strong>3.95 pts</strong>
+                    </div>
+                </div>
+            
+            </article>
+            
+
+            <article class="featured-card"
+                style="--team-a:#008E97;--team-b:#000000;">
+                <div class="type-badge">SPREAD</div>
+
+                <div class="matchup-logos">
+                    <div>
+                        <img src="assets/nfl_logos/MIA.png" alt="MIA logo">
+                        <strong>MIA</strong>
+                    </div>
+                    <span>@</span>
+                    <div>
+                        <img src="assets/nfl_logos/LV.png" alt="LV logo">
+                        <strong>LV</strong>
+                    </div>
+                </div>
+
+                <h3>MIA @ LV</h3>
+                <div class="featured-pick">MIA +3.5</div>
+
+                
+                <div class="stat-grid">
+                    <div>
+                        <span>Stanton Line</span>
+                        <strong>Pick&#x27;em</strong>
+                    </div>
+                    <div>
+                        <span>Market Line</span>
+                        <strong>LV -3.5</strong>
+                    </div>
+                    <div>
+                        <span>Model Edge</span>
+                        <strong>3.52 pts</strong>
+                    </div>
+                </div>
+            
+            </article>
+            
+
+            <article class="featured-card"
+                style="--team-a:#FB4F14;--team-b:#E31837;">
+                <div class="type-badge">SPREAD</div>
+
+                <div class="matchup-logos">
+                    <div>
+                        <img src="assets/nfl_logos/DEN.png" alt="DEN logo">
+                        <strong>DEN</strong>
+                    </div>
+                    <span>@</span>
+                    <div>
+                        <img src="assets/nfl_logos/KC.png" alt="KC logo">
+                        <strong>KC</strong>
+                    </div>
+                </div>
+
+                <h3>DEN @ KC</h3>
+                <div class="featured-pick">DEN +3.0</div>
+
+                
+                <div class="stat-grid">
+                    <div>
+                        <span>Stanton Line</span>
+                        <strong>DEN -0.5</strong>
+                    </div>
+                    <div>
+                        <span>Market Line</span>
+                        <strong>KC -3.0</strong>
+                    </div>
+                    <div>
+                        <span>Model Edge</span>
+                        <strong>3.51 pts</strong>
+                    </div>
+                </div>
+            
+            </article>
+            
+
+            <article class="featured-card"
+                style="--team-a:#D50A0A;--team-b:#FB4F14;">
+                <div class="type-badge">TOTAL</div>
+
+                <div class="matchup-logos">
+                    <div>
+                        <img src="assets/nfl_logos/TB.png" alt="TB logo">
+                        <strong>TB</strong>
+                    </div>
+                    <span>@</span>
+                    <div>
+                        <img src="assets/nfl_logos/CIN.png" alt="CIN logo">
+                        <strong>CIN</strong>
+                    </div>
+                </div>
+
+                <h3>TB @ CIN</h3>
+                <div class="featured-pick">UNDER 50.5</div>
+
+                
+                <div class="stat-grid">
+                    <div>
+                        <span>Stanton Total</span>
+                        <strong>47.3</strong>
+                    </div>
+                    <div>
+                        <span>Market Total</span>
+                        <strong>50.5</strong>
+                    </div>
+                    <div>
+                        <span>Difference</span>
+                        <strong>3.23 pts</strong>
+                    </div>
+                </div>
+            
+            </article>
+            
+    </div>
+</section>
+
+<section id="pickem">
+    <div class="section-head">
+        <h2>Pick’em</h2>
+        <p>Every game straight up, sorted from highest to lowest win probability.</p>
+    </div>
+    <div class="pick-grid">
+        
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>ARI @ LAC</span>
+                    <img src="assets/nfl_logos/LAC.png" alt="LAC logo">
+                </div>
+                <div class="pick-team">LAC</div>
+                <div class="pick-percent">73.8% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:73.8%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>CLE @ JAX</span>
+                    <img src="assets/nfl_logos/JAX.png" alt="JAX logo">
+                </div>
+                <div class="pick-team">JAX</div>
+                <div class="pick-percent">72.7% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:72.7%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>NO @ DET</span>
+                    <img src="assets/nfl_logos/DET.png" alt="DET logo">
+                </div>
+                <div class="pick-team">DET</div>
+                <div class="pick-percent">67.8% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:67.8%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>WSH @ PHI</span>
+                    <img src="assets/nfl_logos/PHI.png" alt="PHI logo">
+                </div>
+                <div class="pick-team">PHI</div>
+                <div class="pick-percent">66.9% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:66.9%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>NE @ SEA</span>
+                    <img src="assets/nfl_logos/SEA.png" alt="SEA logo">
+                </div>
+                <div class="pick-team">SEA</div>
+                <div class="pick-percent">62.1% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:62.1%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>ATL @ PIT</span>
+                    <img src="assets/nfl_logos/PIT.png" alt="PIT logo">
+                </div>
+                <div class="pick-team">PIT</div>
+                <div class="pick-percent">58.5% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:58.5%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>SF @ LAR</span>
+                    <img src="assets/nfl_logos/LAR.png" alt="LAR logo">
+                </div>
+                <div class="pick-team">LAR</div>
+                <div class="pick-percent">58.1% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:58.1%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>BAL @ IND</span>
+                    <img src="assets/nfl_logos/BAL.png" alt="BAL logo">
+                </div>
+                <div class="pick-team">BAL</div>
+                <div class="pick-percent">58.0% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:58.0%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>TB @ CIN</span>
+                    <img src="assets/nfl_logos/CIN.png" alt="CIN logo">
+                </div>
+                <div class="pick-team">CIN</div>
+                <div class="pick-percent">57.5% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:57.5%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>NYJ @ TEN</span>
+                    <img src="assets/nfl_logos/TEN.png" alt="TEN logo">
+                </div>
+                <div class="pick-team">TEN</div>
+                <div class="pick-percent">57.4% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:57.4%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>CHI @ CAR</span>
+                    <img src="assets/nfl_logos/CHI.png" alt="CHI logo">
+                </div>
+                <div class="pick-team">CHI</div>
+                <div class="pick-percent">56.8% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:56.8%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>GB @ MIN</span>
+                    <img src="assets/nfl_logos/MIN.png" alt="MIN logo">
+                </div>
+                <div class="pick-team">MIN</div>
+                <div class="pick-percent">55.4% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:55.4%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>DEN @ KC</span>
+                    <img src="assets/nfl_logos/DEN.png" alt="DEN logo">
+                </div>
+                <div class="pick-team">DEN</div>
+                <div class="pick-percent">54.0% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:54.0%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>BUF @ HOU</span>
+                    <img src="assets/nfl_logos/HOU.png" alt="HOU logo">
+                </div>
+                <div class="pick-team">HOU</div>
+                <div class="pick-percent">53.2% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:53.2%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>MIA @ LV</span>
+                    <img src="assets/nfl_logos/MIA.png" alt="MIA logo">
+                </div>
+                <div class="pick-team">MIA</div>
+                <div class="pick-percent">52.5% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:52.5%"></div>
+                </div>
+            </article>
+            
+
+            <article class="pick-card">
+                <div class="pick-top">
+                    <span>DAL @ NYG</span>
+                    <img src="assets/nfl_logos/DAL.png" alt="DAL logo">
+                </div>
+                <div class="pick-team">DAL</div>
+                <div class="pick-percent">51.4% win probability</div>
+                <div class="prob-track">
+                    <div class="prob-fill" style="width:51.4%"></div>
+                </div>
+            </article>
+            
+    </div>
+</section>
+
+<section id="weekly-board">
+    <div class="section-head">
+        <h2>Weekly Board</h2>
+        <p>
+            Every Week 1 matchup with Stanton’s projection,
+            the market line, model edge, and total.
+        </p>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Matchup</th>
+                    <th>Pick’em</th>
+                    <th>Stanton Line</th>
+                    <th>Market Line</th>
+                    <th>Edge</th>
+                    <th>Stanton Total</th>
+                    <th>Market Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/MIA.png" alt="MIA logo">
+                        <span>MIA</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/LV.png" alt="LV logo">
+                        <span>LV</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>MIA</strong>
+                    <span class="sub">52.5%</span>
+                </td>
+                <td>Pick&#x27;em</td>
+                <td>LV -3.5</td>
+                <td>
+                    <div class="edge-number edge-strong">
+                        <span>3.52</span>
+                        <div class="edge-meter">
+                            <div style="width:88.1%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>42.2</td>
+                <td>40.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            MIA 52.5%
+                            · LV 47.5%
+                            <br>
+                            <strong>Model side:</strong> MIA
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/DEN.png" alt="DEN logo">
+                        <span>DEN</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/KC.png" alt="KC logo">
+                        <span>KC</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>DEN</strong>
+                    <span class="sub">54.0%</span>
+                </td>
+                <td>DEN -0.5</td>
+                <td>KC -3.0</td>
+                <td>
+                    <div class="edge-number edge-strong">
+                        <span>3.51</span>
+                        <div class="edge-meter">
+                            <div style="width:87.8%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>40.2</td>
+                <td>42.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            DEN 54.0%
+                            · KC 46.0%
+                            <br>
+                            <strong>Model side:</strong> DEN
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/BUF.png" alt="BUF logo">
+                        <span>BUF</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/HOU.png" alt="HOU logo">
+                        <span>HOU</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>HOU</strong>
+                    <span class="sub">53.2%</span>
+                </td>
+                <td>HOU -1.8</td>
+                <td>BUF -1.5</td>
+                <td>
+                    <div class="edge-number edge-strong">
+                        <span>3.31</span>
+                        <div class="edge-meter">
+                            <div style="width:82.8%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>47.8</td>
+                <td>44.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            BUF 46.8%
+                            · HOU 53.2%
+                            <br>
+                            <strong>Model side:</strong> HOU
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/DAL.png" alt="DAL logo">
+                        <span>DAL</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/NYG.png" alt="NYG logo">
+                        <span>NYG</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>DAL</strong>
+                    <span class="sub">51.4%</span>
+                </td>
+                <td>NYG -0.3</td>
+                <td>DAL -2.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>2.83</span>
+                        <div class="edge-meter">
+                            <div style="width:70.8%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>49.0</td>
+                <td>48.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            DAL 51.4%
+                            · NYG 48.6%
+                            <br>
+                            <strong>Model side:</strong> NYG
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/BAL.png" alt="BAL logo">
+                        <span>BAL</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/IND.png" alt="IND logo">
+                        <span>IND</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>BAL</strong>
+                    <span class="sub">58.0%</span>
+                </td>
+                <td>BAL -1.8</td>
+                <td>BAL -3.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>1.69</span>
+                        <div class="edge-meter">
+                            <div style="width:42.3%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>47.9</td>
+                <td>48.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            BAL 58.0%
+                            · IND 42.0%
+                            <br>
+                            <strong>Model side:</strong> IND
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/NYJ.png" alt="NYJ logo">
+                        <span>NYJ</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/TEN.png" alt="TEN logo">
+                        <span>TEN</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>TEN</strong>
+                    <span class="sub">57.4%</span>
+                </td>
+                <td>TEN -3.2</td>
+                <td>TEN -1.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>1.67</span>
+                        <div class="edge-meter">
+                            <div style="width:41.8%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>43.7</td>
+                <td>39.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            NYJ 42.6%
+                            · TEN 57.4%
+                            <br>
+                            <strong>Model side:</strong> TEN
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/ARI.png" alt="ARI logo">
+                        <span>ARI</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/LAC.png" alt="LAC logo">
+                        <span>LAC</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>LAC</strong>
+                    <span class="sub">73.8%</span>
+                </td>
+                <td>LAC -9.0</td>
+                <td>LAC -10.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>1.45</span>
+                        <div class="edge-meter">
+                            <div style="width:36.3%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>44.6</td>
+                <td>46.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            ARI 26.2%
+                            · LAC 73.8%
+                            <br>
+                            <strong>Model side:</strong> ARI
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/NE.png" alt="NE logo">
+                        <span>NE</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/SEA.png" alt="SEA logo">
+                        <span>SEA</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>SEA</strong>
+                    <span class="sub">62.1%</span>
+                </td>
+                <td>SEA -4.7</td>
+                <td>SEA -3.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>1.21</span>
+                        <div class="edge-meter">
+                            <div style="width:30.3%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>47.7</td>
+                <td>44.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            NE 37.9%
+                            · SEA 62.1%
+                            <br>
+                            <strong>Model side:</strong> SEA
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/CHI.png" alt="CHI logo">
+                        <span>CHI</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/CAR.png" alt="CAR logo">
+                        <span>CAR</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>CHI</strong>
+                    <span class="sub">56.8%</span>
+                </td>
+                <td>CHI -1.4</td>
+                <td>CHI -2.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>1.10</span>
+                        <div class="edge-meter">
+                            <div style="width:27.6%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>45.8</td>
+                <td>47.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            CHI 56.8%
+                            · CAR 43.2%
+                            <br>
+                            <strong>Model side:</strong> CAR
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/CLE.png" alt="CLE logo">
+                        <span>CLE</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/JAX.png" alt="JAX logo">
+                        <span>JAX</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>JAX</strong>
+                    <span class="sub">72.7%</span>
+                </td>
+                <td>JAX -8.6</td>
+                <td>JAX -7.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>1.09</span>
+                        <div class="edge-meter">
+                            <div style="width:27.2%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>44.9</td>
+                <td>40.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            CLE 27.3%
+                            · JAX 72.7%
+                            <br>
+                            <strong>Model side:</strong> JAX
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/GB.png" alt="GB logo">
+                        <span>GB</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/MIN.png" alt="MIN logo">
+                        <span>MIN</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>MIN</strong>
+                    <span class="sub">55.4%</span>
+                </td>
+                <td>MIN -2.5</td>
+                <td>MIN -1.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>1.00</span>
+                        <div class="edge-meter">
+                            <div style="width:25.1%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>44.2</td>
+                <td>46.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            GB 44.6%
+                            · MIN 55.4%
+                            <br>
+                            <strong>Model side:</strong> MIN
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/WAS.png" alt="WSH logo">
+                        <span>WSH</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/PHI.png" alt="PHI logo">
+                        <span>PHI</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>PHI</strong>
+                    <span class="sub">66.9%</span>
+                </td>
+                <td>PHI -6.4</td>
+                <td>PHI -5.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>0.89</span>
+                        <div class="edge-meter">
+                            <div style="width:22.1%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>42.8</td>
+                <td>44.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            WSH 33.1%
+                            · PHI 66.9%
+                            <br>
+                            <strong>Model side:</strong> PHI
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/TB.png" alt="TB logo">
+                        <span>TB</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/CIN.png" alt="CIN logo">
+                        <span>CIN</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>CIN</strong>
+                    <span class="sub">57.5%</span>
+                </td>
+                <td>CIN -3.2</td>
+                <td>CIN -3.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>0.29</span>
+                        <div class="edge-meter">
+                            <div style="width:7.3%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>47.3</td>
+                <td>50.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            TB 42.5%
+                            · CIN 57.5%
+                            <br>
+                            <strong>Model side:</strong> TB
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/NO.png" alt="NO logo">
+                        <span>NO</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/DET.png" alt="DET logo">
+                        <span>DET</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>DET</strong>
+                    <span class="sub">67.8%</span>
+                </td>
+                <td>DET -6.7</td>
+                <td>DET -7.0</td>
+                <td>
+                    <div class="edge-number">
+                        <span>0.28</span>
+                        <div class="edge-meter">
+                            <div style="width:6.9%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>45.5</td>
+                <td>49.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            NO 32.2%
+                            · DET 67.8%
+                            <br>
+                            <strong>Model side:</strong> NO
+                            · <strong>Total direction:</strong> UNDER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/SF.png" alt="SF logo">
+                        <span>SF</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/LAR.png" alt="LAR logo">
+                        <span>LAR</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>LAR</strong>
+                    <span class="sub">58.1%</span>
+                </td>
+                <td>LAR -3.4</td>
+                <td>LAR -3.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>0.11</span>
+                        <div class="edge-meter">
+                            <div style="width:2.7%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>50.5</td>
+                <td>48.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            SF 41.9%
+                            · LAR 58.1%
+                            <br>
+                            <strong>Model side:</strong> SF
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>
+                    <div class="matchup-cell">
+                        <img src="assets/nfl_logos/ATL.png" alt="ATL logo">
+                        <span>ATL</span>
+                        <span class="at">@</span>
+                        <img src="assets/nfl_logos/PIT.png" alt="PIT logo">
+                        <span>PIT</span>
+                    </div>
+                </td>
+                <td>
+                    <strong>PIT</strong>
+                    <span class="sub">58.5%</span>
+                </td>
+                <td>PIT -3.5</td>
+                <td>PIT -3.5</td>
+                <td>
+                    <div class="edge-number">
+                        <span>0.01</span>
+                        <div class="edge-meter">
+                            <div style="width:0.3%"></div>
+                        </div>
+                    </div>
+                </td>
+                <td>45.3</td>
+                <td>42.5</td>
+                <td>
+                    <details class="inline-details">
+                        <summary>Details</summary>
+                        <div>
+                            <strong>Win probability:</strong>
+                            ATL 41.5%
+                            · PIT 58.5%
+                            <br>
+                            <strong>Model side:</strong> PIT
+                            · <strong>Total direction:</strong> OVER
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="ratings">
+    <div class="section-head">
+        <h2>Power Rankings</h2>
+        <p>Current team-strength order.</p>
+    </div>
+
+    <div class="power-board">
+        
+            <div class="power-column">
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#002244;
+                        --rank-accent-2:#69BE28;
+                    "
+                >
+                    <div class="power-rank">
+                        1
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/SEA.png"
+                                alt="SEA logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            SEA
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#003594;
+                        --rank-accent-2:#FFA300;
+                    "
+                >
+                    <div class="power-rank">
+                        2
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/LAR.png"
+                                alt="LAR logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            LAR
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#002244;
+                        --rank-accent-2:#C60C30;
+                    "
+                >
+                    <div class="power-rank">
+                        3
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/NE.png"
+                                alt="NE logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            NE
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#00338D;
+                        --rank-accent-2:#C60C30;
+                    "
+                >
+                    <div class="power-rank">
+                        4
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/BUF.png"
+                                alt="BUF logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            BUF
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#FB4F14;
+                        --rank-accent-2:#002244;
+                    "
+                >
+                    <div class="power-rank">
+                        5
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/DEN.png"
+                                alt="DEN logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            DEN
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#03202F;
+                        --rank-accent-2:#A71930;
+                    "
+                >
+                    <div class="power-rank">
+                        6
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/HOU.png"
+                                alt="HOU logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            HOU
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#241773;
+                        --rank-accent-2:#000000;
+                    "
+                >
+                    <div class="power-rank">
+                        7
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/BAL.png"
+                                alt="BAL logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            BAL
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#004C54;
+                        --rank-accent-2:#A5ACAF;
+                    "
+                >
+                    <div class="power-rank">
+                        8
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/PHI.png"
+                                alt="PHI logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            PHI
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+            </div>
+            
+
+            <div class="power-column">
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#AA0000;
+                        --rank-accent-2:#B3995D;
+                    "
+                >
+                    <div class="power-rank">
+                        9
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/SF.png"
+                                alt="SF logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            SF
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#006778;
+                        --rank-accent-2:#D7A22A;
+                    "
+                >
+                    <div class="power-rank">
+                        10
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/JAX.png"
+                                alt="JAX logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            JAX
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#0076B6;
+                        --rank-accent-2:#B0B7BC;
+                    "
+                >
+                    <div class="power-rank">
+                        11
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/DET.png"
+                                alt="DET logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            DET
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#0B162A;
+                        --rank-accent-2:#C83803;
+                    "
+                >
+                    <div class="power-rank">
+                        12
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/CHI.png"
+                                alt="CHI logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            CHI
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#0080C6;
+                        --rank-accent-2:#FFC20E;
+                    "
+                >
+                    <div class="power-rank">
+                        13
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/LAC.png"
+                                alt="LAC logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            LAC
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#4F2683;
+                        --rank-accent-2:#FFC62F;
+                    "
+                >
+                    <div class="power-rank">
+                        14
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/MIN.png"
+                                alt="MIN logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            MIN
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#203731;
+                        --rank-accent-2:#FFB612;
+                    "
+                >
+                    <div class="power-rank">
+                        15
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/GB.png"
+                                alt="GB logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            GB
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#E31837;
+                        --rank-accent-2:#FFB81C;
+                    "
+                >
+                    <div class="power-rank">
+                        16
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/KC.png"
+                                alt="KC logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            KC
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+            </div>
+            
+
+            <div class="power-column">
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#FFB612;
+                        --rank-accent-2:#101820;
+                    "
+                >
+                    <div class="power-rank">
+                        17
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/PIT.png"
+                                alt="PIT logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            PIT
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#FB4F14;
+                        --rank-accent-2:#000000;
+                    "
+                >
+                    <div class="power-rank">
+                        18
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/CIN.png"
+                                alt="CIN logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            CIN
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#003594;
+                        --rank-accent-2:#869397;
+                    "
+                >
+                    <div class="power-rank">
+                        19
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/DAL.png"
+                                alt="DAL logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            DAL
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#D50A0A;
+                        --rank-accent-2:#34302B;
+                    "
+                >
+                    <div class="power-rank">
+                        20
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/TB.png"
+                                alt="TB logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            TB
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#A71930;
+                        --rank-accent-2:#000000;
+                    "
+                >
+                    <div class="power-rank">
+                        21
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/ATL.png"
+                                alt="ATL logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            ATL
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#002C5F;
+                        --rank-accent-2:#A2AAAD;
+                    "
+                >
+                    <div class="power-rank">
+                        22
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/IND.png"
+                                alt="IND logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            IND
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#5A1414;
+                        --rank-accent-2:#FFB612;
+                    "
+                >
+                    <div class="power-rank">
+                        23
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/WAS.png"
+                                alt="WSH logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            WSH
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#0085CA;
+                        --rank-accent-2:#101820;
+                    "
+                >
+                    <div class="power-rank">
+                        24
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/CAR.png"
+                                alt="CAR logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            CAR
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+            </div>
+            
+
+            <div class="power-column">
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#D3BC8D;
+                        --rank-accent-2:#101820;
+                    "
+                >
+                    <div class="power-rank">
+                        25
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/NO.png"
+                                alt="NO logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            NO
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#0B2265;
+                        --rank-accent-2:#A71930;
+                    "
+                >
+                    <div class="power-rank">
+                        26
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/NYG.png"
+                                alt="NYG logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            NYG
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#008E97;
+                        --rank-accent-2:#FC4C02;
+                    "
+                >
+                    <div class="power-rank">
+                        27
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/MIA.png"
+                                alt="MIA logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            MIA
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#311D00;
+                        --rank-accent-2:#FF3C00;
+                    "
+                >
+                    <div class="power-rank">
+                        28
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/CLE.png"
+                                alt="CLE logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            CLE
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#0C2340;
+                        --rank-accent-2:#4B92DB;
+                    "
+                >
+                    <div class="power-rank">
+                        29
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/TEN.png"
+                                alt="TEN logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            TEN
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#97233F;
+                        --rank-accent-2:#000000;
+                    "
+                >
+                    <div class="power-rank">
+                        30
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/ARI.png"
+                                alt="ARI logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            ARI
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#125740;
+                        --rank-accent-2:#000000;
+                    "
+                >
+                    <div class="power-rank">
+                        31
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/NYJ.png"
+                                alt="NYJ logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            NYJ
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+                <article
+                    class="power-card"
+                    style="
+                        --rank-accent:#000000;
+                        --rank-accent-2:#A5ACAF;
+                    "
+                >
+                    <div class="power-rank">
+                        32
+                    </div>
+
+                    <div class="power-team-wrap">
+                        <div class="power-logo-shell">
+                            <img
+                                src="assets/nfl_logos/LV.png"
+                                alt="LV logo"
+                                class="power-logo"
+                            >
+                        </div>
+
+                        <div class="power-team">
+                            LV
+                        </div>
+                    </div>
+
+                    <div class="power-movement neutral">
+                        <strong>—</strong>
+                    </div>
+                </article>
+                
+            </div>
+            
+    </div>
+</section>
+
+<section id="performance">
+    <div class="section-head">
+        <h2>Track Record</h2>
+        <p>
+            Every archived prediction gets graded as the season progresses.
+        </p>
+    </div>
+    <div class="metric-grid">
+        
+        <div class="metric-card">
+            <span>Graded Games</span>
+            <strong>0</strong>
+        </div>
+        
+
+        <div class="metric-card">
+            <span>Straight Up</span>
+            <strong>—</strong>
+        </div>
+        
+
+        <div class="metric-card">
+            <span>ATS Record</span>
+            <strong>—</strong>
+        </div>
+        
+
+        <div class="metric-card">
+            <span>Spread MAE</span>
+            <strong>—</strong>
+        </div>
+        
+
+        <div class="metric-card">
+            <span>O/U Record</span>
+            <strong>—</strong>
+        </div>
+        
+
+        <div class="metric-card">
+            <span>Total MAE</span>
+            <strong>—</strong>
+        </div>
+        
+    </div>
+</section>
+
+<footer>
+    <div class="footer-brand">
+        <strong>STANTON NFL</strong>
+        <span>2026 · Week 1</span>
+    </div>
+    <div>
+        Independent statistical model. Not affiliated with the NFL, ESPN, or any sportsbook.
+        Lines may move after publication.
+    </div>
+</footer>
+
+</div>
+</body>
+</html>
+
