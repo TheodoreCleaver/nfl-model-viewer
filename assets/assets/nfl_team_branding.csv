@@ -1,0 +1,33 @@
+team_id,team_name,espn_logo_abbr,logo_filename,logo_relative_path,primary_color,secondary_color,logo_source_url,download_status
+ARI,Arizona Cardinals,ari,ARI.png,../assets/nfl_logos/ARI.png,#97233F,#000000,https://a.espncdn.com/i/teamlogos/nfl/500/ari.png,DOWNLOADED
+ATL,Atlanta Falcons,atl,ATL.png,../assets/nfl_logos/ATL.png,#A71930,#000000,https://a.espncdn.com/i/teamlogos/nfl/500/atl.png,DOWNLOADED
+BAL,Baltimore Ravens,bal,BAL.png,../assets/nfl_logos/BAL.png,#241773,#000000,https://a.espncdn.com/i/teamlogos/nfl/500/bal.png,DOWNLOADED
+BUF,Buffalo Bills,buf,BUF.png,../assets/nfl_logos/BUF.png,#00338D,#C60C30,https://a.espncdn.com/i/teamlogos/nfl/500/buf.png,DOWNLOADED
+CAR,Carolina Panthers,car,CAR.png,../assets/nfl_logos/CAR.png,#0085CA,#101820,https://a.espncdn.com/i/teamlogos/nfl/500/car.png,DOWNLOADED
+CHI,Chicago Bears,chi,CHI.png,../assets/nfl_logos/CHI.png,#0B162A,#C83803,https://a.espncdn.com/i/teamlogos/nfl/500/chi.png,DOWNLOADED
+CIN,Cincinnati Bengals,cin,CIN.png,../assets/nfl_logos/CIN.png,#FB4F14,#000000,https://a.espncdn.com/i/teamlogos/nfl/500/cin.png,DOWNLOADED
+CLE,Cleveland Browns,cle,CLE.png,../assets/nfl_logos/CLE.png,#311D00,#FF3C00,https://a.espncdn.com/i/teamlogos/nfl/500/cle.png,DOWNLOADED
+DAL,Dallas Cowboys,dal,DAL.png,../assets/nfl_logos/DAL.png,#003594,#869397,https://a.espncdn.com/i/teamlogos/nfl/500/dal.png,DOWNLOADED
+DEN,Denver Broncos,den,DEN.png,../assets/nfl_logos/DEN.png,#FB4F14,#002244,https://a.espncdn.com/i/teamlogos/nfl/500/den.png,DOWNLOADED
+DET,Detroit Lions,det,DET.png,../assets/nfl_logos/DET.png,#0076B6,#B0B7BC,https://a.espncdn.com/i/teamlogos/nfl/500/det.png,DOWNLOADED
+GB,Green Bay Packers,gb,GB.png,../assets/nfl_logos/GB.png,#203731,#FFB612,https://a.espncdn.com/i/teamlogos/nfl/500/gb.png,DOWNLOADED
+HOU,Houston Texans,hou,HOU.png,../assets/nfl_logos/HOU.png,#03202F,#A71930,https://a.espncdn.com/i/teamlogos/nfl/500/hou.png,DOWNLOADED
+IND,Indianapolis Colts,ind,IND.png,../assets/nfl_logos/IND.png,#002C5F,#A2AAAD,https://a.espncdn.com/i/teamlogos/nfl/500/ind.png,DOWNLOADED
+JAX,Jacksonville Jaguars,jax,JAX.png,../assets/nfl_logos/JAX.png,#006778,#D7A22A,https://a.espncdn.com/i/teamlogos/nfl/500/jax.png,DOWNLOADED
+KC,Kansas City Chiefs,kc,KC.png,../assets/nfl_logos/KC.png,#E31837,#FFB81C,https://a.espncdn.com/i/teamlogos/nfl/500/kc.png,DOWNLOADED
+LAC,Los Angeles Chargers,lac,LAC.png,../assets/nfl_logos/LAC.png,#0080C6,#FFC20E,https://a.espncdn.com/i/teamlogos/nfl/500/lac.png,DOWNLOADED
+LAR,Los Angeles Rams,lar,LAR.png,../assets/nfl_logos/LAR.png,#003594,#FFA300,https://a.espncdn.com/i/teamlogos/nfl/500/lar.png,DOWNLOADED
+LV,Las Vegas Raiders,lv,LV.png,../assets/nfl_logos/LV.png,#000000,#A5ACAF,https://a.espncdn.com/i/teamlogos/nfl/500/lv.png,DOWNLOADED
+MIA,Miami Dolphins,mia,MIA.png,../assets/nfl_logos/MIA.png,#008E97,#FC4C02,https://a.espncdn.com/i/teamlogos/nfl/500/mia.png,DOWNLOADED
+MIN,Minnesota Vikings,min,MIN.png,../assets/nfl_logos/MIN.png,#4F2683,#FFC62F,https://a.espncdn.com/i/teamlogos/nfl/500/min.png,DOWNLOADED
+NE,New England Patriots,ne,NE.png,../assets/nfl_logos/NE.png,#002244,#C60C30,https://a.espncdn.com/i/teamlogos/nfl/500/ne.png,DOWNLOADED
+NO,New Orleans Saints,no,NO.png,../assets/nfl_logos/NO.png,#D3BC8D,#101820,https://a.espncdn.com/i/teamlogos/nfl/500/no.png,DOWNLOADED
+NYG,New York Giants,nyg,NYG.png,../assets/nfl_logos/NYG.png,#0B2265,#A71930,https://a.espncdn.com/i/teamlogos/nfl/500/nyg.png,DOWNLOADED
+NYJ,New York Jets,nyj,NYJ.png,../assets/nfl_logos/NYJ.png,#125740,#000000,https://a.espncdn.com/i/teamlogos/nfl/500/nyj.png,DOWNLOADED
+PHI,Philadelphia Eagles,phi,PHI.png,../assets/nfl_logos/PHI.png,#004C54,#A5ACAF,https://a.espncdn.com/i/teamlogos/nfl/500/phi.png,DOWNLOADED
+PIT,Pittsburgh Steelers,pit,PIT.png,../assets/nfl_logos/PIT.png,#FFB612,#101820,https://a.espncdn.com/i/teamlogos/nfl/500/pit.png,DOWNLOADED
+SEA,Seattle Seahawks,sea,SEA.png,../assets/nfl_logos/SEA.png,#002244,#69BE28,https://a.espncdn.com/i/teamlogos/nfl/500/sea.png,DOWNLOADED
+SF,San Francisco 49ers,sf,SF.png,../assets/nfl_logos/SF.png,#AA0000,#B3995D,https://a.espncdn.com/i/teamlogos/nfl/500/sf.png,DOWNLOADED
+TB,Tampa Bay Buccaneers,tb,TB.png,../assets/nfl_logos/TB.png,#D50A0A,#34302B,https://a.espncdn.com/i/teamlogos/nfl/500/tb.png,DOWNLOADED
+TEN,Tennessee Titans,ten,TEN.png,../assets/nfl_logos/TEN.png,#0C2340,#4B92DB,https://a.espncdn.com/i/teamlogos/nfl/500/ten.png,DOWNLOADED
+WAS,Washington Commanders,wsh,WAS.png,../assets/nfl_logos/WAS.png,#5A1414,#FFB612,https://a.espncdn.com/i/teamlogos/nfl/500/wsh.png,DOWNLOADED
