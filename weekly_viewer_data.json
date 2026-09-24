@@ -8,7 +8,13 @@
   "summary": {
     "games": 16,
     "straight_up_picks": 16,
-    "stanton_card_spots": 11,
+    "stanton_card_spots": 4,
+    "stance_max": 4,
+    "stance_min_edge": 3.0,
+    "stance_exclusions": [
+      "PHI @ CHI",
+      "TEN @ NYG"
+    ],
     "model_leans": 1,
     "totals_on_card": 6
   },
@@ -483,26 +489,6 @@
   "stanton_card": [
     {
       "type": "spread",
-      "game_id": "2026_2_3_PHI_AT_CHI",
-      "matchup": "PHI @ CHI",
-      "side": "CHI",
-      "market_line": "PHI -4.5",
-      "model_line": "CHI -2.6",
-      "edge": 7.103445837599603,
-      "label": "Big Swing"
-    },
-    {
-      "type": "total",
-      "game_id": "2026_2_3_CAR_AT_CLE",
-      "matchup": "CAR @ CLE",
-      "side": "OVER",
-      "market_total": 42.5,
-      "model_total": 49.478287577431786,
-      "edge": 6.978287577431786,
-      "label": "Manual Review"
-    },
-    {
-      "type": "spread",
       "game_id": "2026_2_3_KC_AT_MIA",
       "matchup": "KC @ MIA",
       "side": "MIA",
@@ -510,16 +496,6 @@
       "model_line": "KC -4.8",
       "edge": 6.66920291355845,
       "label": "Big Swing"
-    },
-    {
-      "type": "total",
-      "game_id": "2026_2_3_PHI_AT_CHI",
-      "matchup": "PHI @ CHI",
-      "side": "OVER",
-      "market_total": 41.5,
-      "model_total": 47.459434191329606,
-      "edge": 5.959434191329606,
-      "label": "Manual Review"
     },
     {
       "type": "spread",
@@ -533,52 +509,12 @@
     },
     {
       "type": "total",
-      "game_id": "2026_2_3_HOU_AT_IND",
-      "matchup": "HOU @ IND",
-      "side": "OVER",
-      "market_total": 42.5,
-      "model_total": 47.62431078301714,
-      "edge": 5.124310783017137,
-      "label": "Manual Review"
-    },
-    {
-      "type": "total",
       "game_id": "2026_2_3_ATL_AT_GB",
       "matchup": "ATL @ GB",
       "side": "UNDER",
       "market_total": 42.5,
       "model_total": 37.876245535228016,
       "edge": 4.623754464771984,
-      "label": "Lean"
-    },
-    {
-      "type": "spread",
-      "game_id": "2026_2_3_TEN_AT_NYG",
-      "matchup": "TEN @ NYG",
-      "side": "NYG",
-      "market_line": "NYG -3.0",
-      "model_line": "NYG -7.5",
-      "edge": 4.529948544944415,
-      "label": "Top Spot"
-    },
-    {
-      "type": "total",
-      "game_id": "2026_2_3_SEA_AT_WAS",
-      "matchup": "SEA @ WSH",
-      "side": "OVER",
-      "market_total": 40.5,
-      "model_total": 44.99764615337314,
-      "edge": 4.49764615337314,
-      "label": "Lean"
-    },
-    {
-      "type": "total",
-      "game_id": "2026_2_3_TEN_AT_NYG",
-      "matchup": "TEN @ NYG",
-      "side": "OVER",
-      "market_total": 39.5,
-      "model_total": 43.57383229113906,
-      "edge": 4.073832291139063,
       "label": "Lean"
     },
     {
