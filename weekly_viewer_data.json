@@ -679,193 +679,193 @@
       "rank": 1,
       "team": "SEA",
       "elo": 1650.5936926729014,
-      "previous_rank": null
+      "previous_rank": 1
     },
     {
       "rank": 2,
       "team": "BUF",
       "elo": 1604.7835265902972,
-      "previous_rank": null
+      "previous_rank": 2
     },
     {
       "rank": 3,
       "team": "SF",
       "elo": 1586.4444561301846,
-      "previous_rank": null
+      "previous_rank": 3
     },
     {
       "rank": 4,
       "team": "BAL",
       "elo": 1582.710632780116,
-      "previous_rank": null
+      "previous_rank": 8
     },
     {
       "rank": 5,
       "team": "NE",
       "elo": 1577.7842309496723,
-      "previous_rank": null
+      "previous_rank": 4
     },
     {
       "rank": 6,
       "team": "LAR",
       "elo": 1566.608631117046,
-      "previous_rank": null
+      "previous_rank": 10
     },
     {
       "rank": 7,
       "team": "JAX",
       "elo": 1563.4889241088997,
-      "previous_rank": null
+      "previous_rank": 5
     },
     {
       "rank": 8,
       "team": "CHI",
       "elo": 1562.6237363920498,
-      "previous_rank": null
+      "previous_rank": 9
     },
     {
       "rank": 9,
       "team": "PHI",
       "elo": 1557.9335235467126,
-      "previous_rank": null
+      "previous_rank": 12
     },
     {
       "rank": 10,
       "team": "MIN",
       "elo": 1552.5781036829972,
-      "previous_rank": null
+      "previous_rank": 6
     },
     {
       "rank": 11,
       "team": "HOU",
       "elo": 1549.857114137431,
-      "previous_rank": null
+      "previous_rank": 7
     },
     {
       "rank": 12,
       "team": "DET",
       "elo": 1549.3012818357824,
-      "previous_rank": null
+      "previous_rank": 13
     },
     {
       "rank": 13,
       "team": "KC",
       "elo": 1548.3395093336203,
-      "previous_rank": null
+      "previous_rank": 14
     },
     {
       "rank": 14,
       "team": "DEN",
       "elo": 1540.1202630661403,
-      "previous_rank": null
+      "previous_rank": 11
     },
     {
       "rank": 15,
       "team": "PIT",
       "elo": 1520.2179178698202,
-      "previous_rank": null
+      "previous_rank": 15
     },
     {
       "rank": 16,
       "team": "CIN",
       "elo": 1518.7750023446272,
-      "previous_rank": null
+      "previous_rank": 16
     },
     {
       "rank": 17,
       "team": "GB",
       "elo": 1494.2539415525375,
-      "previous_rank": null
+      "previous_rank": 17
     },
     {
       "rank": 18,
       "team": "LAC",
       "elo": 1483.523064353248,
-      "previous_rank": null
+      "previous_rank": 18
     },
     {
       "rank": 19,
       "team": "NYG",
       "elo": 1467.4398085245175,
-      "previous_rank": null
+      "previous_rank": 20
     },
     {
       "rank": 20,
       "team": "TB",
       "elo": 1465.4418975464714,
-      "previous_rank": null
+      "previous_rank": 21
     },
     {
       "rank": 21,
       "team": "DAL",
       "elo": 1462.249603755969,
-      "previous_rank": null
+      "previous_rank": 26
     },
     {
       "rank": 22,
       "team": "ATL",
       "elo": 1458.7944680101798,
-      "previous_rank": null
+      "previous_rank": 19
     },
     {
       "rank": 23,
       "team": "WAS",
       "elo": 1455.808225132066,
-      "previous_rank": null
+      "previous_rank": 22
     },
     {
       "rank": 24,
       "team": "NO",
       "elo": 1440.836372142928,
-      "previous_rank": null
+      "previous_rank": 24
     },
     {
       "rank": 25,
       "team": "IND",
       "elo": 1438.4449879508902,
-      "previous_rank": null
+      "previous_rank": 25
     },
     {
       "rank": 26,
       "team": "ARI",
       "elo": 1429.3805443443766,
-      "previous_rank": null
+      "previous_rank": 23
     },
     {
       "rank": 27,
       "team": "CAR",
       "elo": 1423.2671810478137,
-      "previous_rank": null
+      "previous_rank": 28
     },
     {
       "rank": 28,
       "team": "NYJ",
       "elo": 1406.8339763541517,
-      "previous_rank": null
+      "previous_rank": 30
     },
     {
       "rank": 29,
       "team": "LV",
       "elo": 1401.956509894049,
-      "previous_rank": null
+      "previous_rank": 31
     },
     {
       "rank": 30,
       "team": "CLE",
       "elo": 1392.671859411381,
-      "previous_rank": null
+      "previous_rank": 29
     },
     {
       "rank": 31,
       "team": "MIA",
       "elo": 1391.337292418618,
-      "previous_rank": null
+      "previous_rank": 27
     },
     {
       "rank": 32,
       "team": "TEN",
       "elo": 1355.5997216287285,
-      "previous_rank": null
+      "previous_rank": 32
     }
   ],
   "performance": {
