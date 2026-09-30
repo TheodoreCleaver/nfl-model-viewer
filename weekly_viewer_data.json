@@ -486,26 +486,6 @@
   "stanton_card": [
     {
       "type": "spread",
-      "game_id": "2026_2_4_NYJ_AT_CHI",
-      "matchup": "NYJ @ CHI",
-      "side": "CHI",
-      "market_line": "CHI -3.5",
-      "model_line": "CHI -11.3",
-      "edge": 7.842382724452598,
-      "label": "Big Swing"
-    },
-    {
-      "type": "spread",
-      "game_id": "2026_2_4_ARI_AT_NYG",
-      "matchup": "ARI @ NYG",
-      "side": "NYG",
-      "market_line": "ARI -1.5",
-      "model_line": "NYG -5.0",
-      "edge": 6.528150396850939,
-      "label": "Big Swing"
-    },
-    {
-      "type": "spread",
       "game_id": "2026_2_4_LAC_AT_SEA",
       "matchup": "LAC @ SEA",
       "side": "SEA",
@@ -515,14 +495,34 @@
       "label": "Big Swing"
     },
     {
-      "type": "spread",
-      "game_id": "2026_2_4_IND_AT_WAS",
-      "matchup": "IND @ WSH",
-      "side": "WSH",
-      "market_line": "IND -3.5",
-      "model_line": "WSH -1.6",
-      "edge": 5.098922997842685,
-      "label": "Big Swing"
+      "type": "total",
+      "game_id": "2026_2_4_JAX_AT_CIN",
+      "matchup": "JAX @ CIN",
+      "side": "UNDER",
+      "market_total": 51.5,
+      "model_total": 46.36989404374616,
+      "edge": 5.130105956253843,
+      "label": "Manual Review"
+    },
+    {
+      "type": "total",
+      "game_id": "2026_2_4_NE_AT_BUF",
+      "matchup": "NE @ BUF",
+      "side": "UNDER",
+      "market_total": 48.5,
+      "model_total": 44.73882842122362,
+      "edge": 3.761171578776377,
+      "label": "Watch"
+    },
+    {
+      "type": "total",
+      "game_id": "2026_2_4_MIA_AT_MIN",
+      "matchup": "MIA @ MIN",
+      "side": "OVER",
+      "market_total": 38.5,
+      "model_total": 43.20162843371465,
+      "edge": 4.701628433714653,
+      "label": "Lean"
     }
   ],
   "model_vs_market": [
@@ -676,193 +676,193 @@
       "rank": 1,
       "team": "BUF",
       "elo": 1646.343943510257,
-      "previous_rank": 2
+      "previous_rank": null
     },
     {
       "rank": 2,
       "team": "SEA",
       "elo": 1643.5955716040842,
-      "previous_rank": 1
+      "previous_rank": null
     },
     {
       "rank": 3,
       "team": "SF",
       "elo": 1625.9901027029937,
-      "previous_rank": 3
+      "previous_rank": null
     },
     {
       "rank": 4,
       "team": "KC",
       "elo": 1605.5079379808762,
-      "previous_rank": 13
+      "previous_rank": null
     },
     {
       "rank": 5,
       "team": "MIN",
       "elo": 1600.7506353073586,
-      "previous_rank": 10
+      "previous_rank": null
     },
     {
       "rank": 6,
       "team": "CHI",
       "elo": 1588.564861793598,
-      "previous_rank": 8
+      "previous_rank": null
     },
     {
       "rank": 7,
       "team": "BAL",
       "elo": 1586.1596633477952,
-      "previous_rank": 4
+      "previous_rank": null
     },
     {
       "rank": 8,
       "team": "JAX",
       "elo": 1572.5996595332629,
-      "previous_rank": 7
+      "previous_rank": null
     },
     {
       "rank": 9,
       "team": "CIN",
       "elo": 1560.944336662531,
-      "previous_rank": 16
+      "previous_rank": null
     },
     {
       "rank": 10,
       "team": "LAR",
       "elo": 1560.8068675643617,
-      "previous_rank": 6
+      "previous_rank": null
     },
     {
       "rank": 11,
       "team": "NE",
       "elo": 1557.1474355676503,
-      "previous_rank": 5
+      "previous_rank": null
     },
     {
       "rank": 12,
       "team": "DEN",
       "elo": 1554.7548914096028,
-      "previous_rank": 14
+      "previous_rank": null
     },
     {
       "rank": 13,
       "team": "DET",
       "elo": 1552.389858563339,
-      "previous_rank": 12
+      "previous_rank": null
     },
     {
       "rank": 14,
       "team": "PHI",
       "elo": 1547.1392618232917,
-      "previous_rank": 9
+      "previous_rank": null
     },
     {
       "rank": 15,
       "team": "PIT",
       "elo": 1522.9249194627391,
-      "previous_rank": 15
+      "previous_rank": null
     },
     {
       "rank": 16,
       "team": "HOU",
       "elo": 1482.7816338230875,
-      "previous_rank": 11
+      "previous_rank": null
     },
     {
       "rank": 17,
       "team": "DAL",
       "elo": 1481.50032171853,
-      "previous_rank": 21
+      "previous_rank": null
     },
     {
       "rank": 18,
       "team": "LV",
       "elo": 1479.8545570730232,
-      "previous_rank": 29
+      "previous_rank": null
     },
     {
       "rank": 19,
       "team": "NYG",
       "elo": 1473.796964195049,
-      "previous_rank": 19
+      "previous_rank": null
     },
     {
       "rank": 20,
       "team": "GB",
       "elo": 1453.618724276667,
-      "previous_rank": 17
+      "previous_rank": null
     },
     {
       "rank": 21,
       "team": "ATL",
       "elo": 1448.318515399869,
-      "previous_rank": 22
+      "previous_rank": null
     },
     {
       "rank": 22,
       "team": "WAS",
       "elo": 1445.6965064097096,
-      "previous_rank": 23
+      "previous_rank": null
     },
     {
       "rank": 23,
       "team": "NO",
       "elo": 1443.3399207507407,
-      "previous_rank": 24
+      "previous_rank": null
     },
     {
       "rank": 24,
       "team": "CAR",
       "elo": 1433.552558354392,
-      "previous_rank": 27
+      "previous_rank": null
     },
     {
       "rank": 25,
       "team": "IND",
       "elo": 1427.8543472760423,
-      "previous_rank": 25
+      "previous_rank": null
     },
     {
       "rank": 26,
       "team": "TB",
       "elo": 1421.261799975607,
-      "previous_rank": 20
+      "previous_rank": null
     },
     {
       "rank": 27,
       "team": "LAC",
       "elo": 1418.2984318400106,
-      "previous_rank": 18
+      "previous_rank": null
     },
     {
       "rank": 28,
       "team": "ARI",
       "elo": 1416.370194898419,
-      "previous_rank": 26
+      "previous_rank": null
     },
     {
       "rank": 29,
       "team": "CLE",
       "elo": 1406.9398230360823,
-      "previous_rank": 30
+      "previous_rank": null
     },
     {
       "rank": 30,
       "team": "NYJ",
       "elo": 1393.8055385902935,
-      "previous_rank": 28
+      "previous_rank": null
     },
     {
       "rank": 31,
       "team": "MIA",
       "elo": 1326.6874715970953,
-      "previous_rank": 31
+      "previous_rank": null
     },
     {
       "rank": 32,
       "team": "TEN",
       "elo": 1320.7027443899942,
-      "previous_rank": 32
+      "previous_rank": null
     }
   ],
   "performance": {
